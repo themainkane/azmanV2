@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "rootDirs": ["./src"],
+    "outDir": "./dist",
+    "target": "ES2020", // Use a more modern version of ECMAScript
+    "lib": ["esnext"], // Only include modern ECMAScript features
+    "allowJs": false, // Disable JS files
+    "skipLibCheck": true, // Skip library checks to speed up compilation
+    "esModuleInterop": true, // Ensures compatibility with CommonJS modules
+    "allowSyntheticDefaultImports": true, // Ensures default imports work as expected
+    "strict": true, // Enable strict type-checking options
+    "forceConsistentCasingInFileNames": true, // Enforces consistent casing in file names
+    "module": "commonjs", // Use CommonJS module system for Node.js compatibility
+    "moduleResolution": "node", // Use Node module resolution for imports
+    "resolveJsonModule": true, // Allow importing JSON files as modules
+    "isolatedModules": true, // Helps with transpiling and ensures TypeScript only processes isolated modules
+    "noEmit": false,
+    "jsx": "react-jsx" // This is more for frontend React projects, can be omitted in backend projects
+  },
+  "include": ["src/**/*", "src/@types/**/*.d.ts"], // Include the source directory and custom types folder
+
+  "exclude": ["node_modules", "build"] // Exclude build and node_modules directories
+}

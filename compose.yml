@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=jkane
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=admin
+    ports:
+      - "27018:27017" #27018 is local, legacy mongo is running on default 27017
+    volumes:
+      - mongodb_data:/data/db
+
+    command: mongod --auth
+volumes:
+  mongodb_data:
